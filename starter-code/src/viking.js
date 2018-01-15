@@ -13,10 +13,13 @@ Soldier.prototype.receiveDamage = function (damage) {
 };
 
 // Viking
-function Viking() {
-    Soldier.call(this, health, strength);
+function Viking(name, health, strength) {
     this.name = name;
+    Soldier.call(this, health, strength);
 }
+
+Viking.prototype = Object.create(Soldier.prototype);
+Viking.prototype.constructor = Viking;
 
 // Saxon
 function Saxon() {}
