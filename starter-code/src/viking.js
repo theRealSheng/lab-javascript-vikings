@@ -35,12 +35,12 @@ Viking.prototype.battleCry = function() {
 }
 
 // Saxon
-function Saxon() {
+function Saxon(health, strength) {
     Soldier.call(this, health, strength);
 }
 
-Saxon.prototype = Object.create(Viking);
-Saxon.prototype = Saxon;
+Saxon.prototype = Object.create(Soldier.prototype);
+Saxon.prototype.constructor = Saxon;
 
 Saxon.prototype.receiveDamage = function (damage) {
     this.health = this.health - damage;
